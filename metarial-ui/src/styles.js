@@ -24,6 +24,11 @@ const useStyles = makeStyles((theme) => ({
     },
     cardContent:{
         flexGrow: 1,
+    },
+    footer:{
+        marginTop: '2%',
+        padding:'2%',
+        backgroundColor: '#8412'
     }
 }));
 

@@ -5,7 +5,7 @@ import PhotoCameraIcon from '@material-ui/icons/PhotoCamera';
 import useStyles from './styles';
 
 
-
+const cards = [1,2,3,4,5,6,7,8,9]
 
 const App = () => {
     const classes = useStyles();
@@ -47,8 +47,10 @@ const App = () => {
               </div>
               <Container className={classes.cardGrid} maxWidth="md">
                 <Grid container spacing={4}>
-                    <Grid item>
-                        <Card className={classes.card}>
+
+                    {cards.map((card) => 
+                    <Grid item key={card} xs={12} sm={6} md={4}>
+                        <Card className={classes.card} >
                             <CardMedia 
                                 className={classes.cardMedia}
                                 image="https://source.unsplash.com/random"
@@ -68,9 +70,18 @@ const App = () => {
                             </CardActions>
                         </Card>
                     </Grid>
+                    )}
                 </Grid>
               </Container>
           </main>
+          <footer className={classes.footer}>
+                <Typography variant="h6" align="center" gutterBottom>
+                    Footer
+                </Typography>
+                <Typography variant="subtitle1" align="center" color="textSecondary">
+                Learn Material UI in One Hour - React Material UI Project Tutorial
+                </Typography>
+          </footer>
         </>
     )
 }
