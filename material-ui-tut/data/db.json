@@ -23,6 +23,12 @@
       "details": "cikolatayi cok seviyor",
       "category": "todos",
       "id": 4
+    },
+    {
+      "title": "Market Alisverisi",
+      "details": "sebze ve meyve alinacak",
+      "category": "reminders",
+      "id": 5
     }
   ]
 }
