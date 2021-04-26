@@ -11,7 +11,7 @@ import {useHistory, useLocation} from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import {format} from 'date-fns';
-
+import Avatar from '@material-ui/core/Avatar'
 
 const drawerWidth = 240
 
@@ -43,6 +43,9 @@ const useStyles = makeStyles((theme) => {
     toolbar:theme.mixins.toolbar,
     date: {
         flexGrow: 1
+    }, 
+    avatar:{
+        marginLeft: theme.spacing(2)
     }
 }})
 
@@ -74,6 +77,7 @@ export const Layout = ({children}) => {
                     <Typography>
                         Faris Kanbur
                     </Typography>
+                    <Avatar  src="benn.jpg" className={classes.avatar}/>
                 </Toolbar>
             </AppBar>
 
