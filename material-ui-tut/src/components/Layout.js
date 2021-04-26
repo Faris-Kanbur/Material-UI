@@ -12,6 +12,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import {format} from 'date-fns';
 import Avatar from '@material-ui/core/Avatar'
+import Masonry from 'react-masonry-css'
+
 
 const drawerWidth = 240
 
@@ -77,7 +79,7 @@ export const Layout = ({children}) => {
                     <Typography>
                         Faris Kanbur
                     </Typography>
-                    <Avatar  src="benn.jpg" className={classes.avatar}/>
+                    <Avatar button src="benn.jpg" className={classes.avatar} onClick={() => history.push('/')}/>
                 </Toolbar>
             </AppBar>
 
