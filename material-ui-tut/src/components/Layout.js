@@ -1,5 +1,5 @@
 import React from  'react';
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, ThemeProvider } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
@@ -12,10 +12,12 @@ import {useHistory, useLocation} from 'react-router-dom'
 
 const drawerWidth = 240
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => {
+    return {
     page:{
         background: '#f9f9f9',
-        width: '100%'
+        width: '100%',
+        padding: theme.spacing(3)
     },
     drawer: {
         width: drawerWidth
@@ -28,8 +30,11 @@ const useStyles = makeStyles({
     },
     active :{
         background: '#f4f4f4'
+    },
+    title :{
+        padding: theme.spacing(2)
     }
-})
+}})
 
 export const Layout = ({children}) => {
     const classes=useStyles();
@@ -38,7 +43,7 @@ export const Layout = ({children}) => {
 
     const menuItems = [
         {
-            text : 'My Notes',
+            text : 'All Notes',
             icon: <SubjectOutlined color="secondary" />,
             path: '/'
         },
@@ -58,7 +63,7 @@ export const Layout = ({children}) => {
             classes={{paper : classes.drawerPaper }}
             >
                 <div>
-                    <Typography variant="h5"  >
+                    <Typography variant="h5" className={classes.title} align="center" >
                         My Notes
                     </Typography>
                 </div>
